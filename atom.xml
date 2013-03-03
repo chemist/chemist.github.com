@@ -4,7 +4,7 @@
   <title><![CDATA[Chemist's Blog]]></title>
   <link href="http://chemist.github.com/atom.xml" rel="self"/>
   <link href="http://chemist.github.com/"/>
-  <updated>2013-03-03T17:23:17+04:00</updated>
+  <updated>2013-03-03T17:28:41+04:00</updated>
   <id>http://chemist.github.com/</id>
   <author>
     <name><![CDATA[Smirnov Alexey]]></name>
@@ -101,7 +101,7 @@
 
 <p>Установка как для любого cabal пакета.</p>
 
-<h2>Послесловие:</h2>
+<h2>Мысли вслух:</h2>
 
 <p>По хорошему нужно переписать используя <a href="http://en.wikipedia.org/wiki/Directed_acyclic_word_graph">DAWG</a>, в качестве хранилища для лемм и прочего + реализовать полный функционал.</p>
 ]]></content>
