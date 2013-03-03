@@ -124,22 +124,28 @@
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
 </pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="kr">module</span> <span class="nn">Main</span> <span class="kr">where</span>
 </span><span class='line'>
 </span><span class='line'><span class="kr">import</span> <span class="nn">Text.Morphology.Russian</span>
+</span><span class='line'><span class="kr">import</span> <span class="nn">Data.Text</span> <span class="p">(</span><span class="nf">pack</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1">-- | import modules for show cyrillic in console</span>
-</span><span class='line'><span class="kr">import</span> <span class="nn">Data.Text</span> <span class="p">(</span><span class="nf">pack</span><span class="p">)</span>
-</span><span class='line'><span class="kr">import</span> <span class="nn">Data.ByteString</span> <span class="p">(</span><span class="nf">putStrLn</span><span class="p">)</span>
+</span><span class='line'><span class="kr">import</span> <span class="nn">Data.ByteString.Char8</span> <span class="p">(</span><span class="nf">putStrLn</span><span class="p">)</span>
 </span><span class='line'><span class="kr">import</span> <span class="nn">Data.Text.Encoding</span> <span class="p">(</span><span class="nf">encodeUtf8</span><span class="p">)</span>
+</span><span class='line'><span class="kr">import</span> <span class="nn">Prelude</span> <span class="k">hiding</span> <span class="p">(</span><span class="nf">putStrLn</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="nf">main</span><span class="ow">::</span><span class="kt">IO</span> <span class="nb">()</span>
 </span><span class='line'><span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">--|</span> <span class="n">create</span> <span class="n">binary</span> <span class="n">file</span> <span class="n">with</span> <span class="n">morphology</span> <span class="n">base</span>
-</span><span class='line'>  <span class="n">makeMorph</span>
+</span><span class='line'><span class="c1">-- | recreate binary file with morphology base, if you realy need this</span>
+</span><span class='line'><span class="c1">-- |  makeMorph</span>
+</span><span class='line'><span class="c1">-- | create morph.bin file in in data_dir </span>
+</span><span class='line'><span class="c1">-- | about data_dir see here  [about data_dir](http://neilmitchell.blogspot.ru/2008/02/adding-data-files-using-cabal.html)</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">--|</span> <span class="n">load</span> <span class="n">binary</span> <span class="n">file</span><span class="p">,</span> <span class="n">and</span> <span class="n">return</span> <span class="kt">IO</span> <span class="kt">Morph</span>
+</span><span class='line'><span class="c1">-- | load binary file from data_dir, and return IO Morph</span>
 </span><span class='line'>  <span class="n">normal</span> <span class="ow">&lt;-</span> <span class="n">normalForm</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="kr">let</span> <span class="n">check</span> <span class="ow">=</span> <span class="n">normal</span> <span class="p">(</span><span class="n">pack</span> <span class="s">&quot;есть&quot;</span><span class="p">)</span>
