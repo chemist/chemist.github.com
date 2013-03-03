@@ -4,7 +4,7 @@
   <title><![CDATA[Chemist's Blog]]></title>
   <link href="http://chemist.github.com/atom.xml" rel="self"/>
   <link href="http://chemist.github.com/"/>
-  <updated>2013-03-03T16:28:49+04:00</updated>
+  <updated>2013-03-03T17:23:17+04:00</updated>
   <id>http://chemist.github.com/</id>
   <author>
     <name><![CDATA[Smirnov Alexey]]></name>
@@ -18,7 +18,92 @@
     <link href="http://chemist.github.com/blog/2013/03/03/morfologhiia/"/>
     <updated>2013-03-03T16:27:00+04:00</updated>
     <id>http://chemist.github.com/blog/2013/03/03/morfologhiia</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<h2>Предыстория</h2>
+
+<p>Год назад, для одного из проектов мне понадобилась морфология, google и yandex вариантов для haskell не нашли.
+Немного изучив предметную область, написал свой упрощенный вариант морфологии.</p>
+
+<h2>Описание</h2>
+
+<p>Словарь взял из  <a href="http://pythonhosted.org/pymorphy/">pymorphy</a>, из функционала присутствует только нормализация, все остальное мне было не нужно.</p>
+
+<p>Пример использования:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="kr">module</span> <span class="nn">Main</span> <span class="kr">where</span>
+</span><span class='line'>
+</span><span class='line'><span class="kr">import</span> <span class="nn">Text.Morphology.Russian</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">-- | import modules for show cyrillic in console</span>
+</span><span class='line'><span class="kr">import</span> <span class="nn">Data.ByteString</span> <span class="p">(</span><span class="nf">putStrLn</span><span class="p">)</span>
+</span><span class='line'><span class="kr">import</span> <span class="nn">Data.Text.Encoding</span> <span class="p">(</span><span class="nf">encodeUtf8</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">main</span><span class="ow">::</span><span class="kt">IO</span> <span class="nb">()</span>
+</span><span class='line'><span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">--|</span> <span class="n">create</span> <span class="n">binary</span> <span class="n">file</span> <span class="n">with</span> <span class="n">morphology</span> <span class="n">base</span>
+</span><span class='line'>  <span class="n">makeMorph</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">--|</span> <span class="n">load</span> <span class="n">binary</span> <span class="n">file</span><span class="p">,</span> <span class="n">and</span> <span class="n">return</span> <span class="kt">IO</span> <span class="kt">Morph</span>
+</span><span class='line'>  <span class="n">normal</span> <span class="ow">&lt;-</span> <span class="n">normalForm</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kr">let</span> <span class="n">check</span> <span class="ow">=</span> <span class="n">normal</span> <span class="p">(</span><span class="n">pack</span> <span class="s">&quot;есть&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">mapM_</span> <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">map</span> <span class="n">encodeUtf8</span> <span class="n">check</span>
+</span><span class='line'>  <span class="kr">let</span> <span class="n">check</span> <span class="ow">=</span> <span class="n">normal</span> <span class="p">(</span><span class="n">pack</span> <span class="s">&quot;ржи&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">mapM_</span> <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">map</span> <span class="n">encodeUtf8</span> <span class="n">check</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>В результате:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="o">&gt;</span> <span class="kt">:</span><span class="n">l</span> <span class="kt">Main</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="n">main</span>
+</span><span class='line'><span class="err">быть</span>
+</span><span class='line'><span class="err">есть</span>
+</span><span class='line'><span class="err">есть</span>
+</span><span class='line'><span class="err">рожь</span>
+</span><span class='line'><span class="err">ржа</span>
+</span><span class='line'><span class="err">ржать</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Если нормальной формы не найденно возвращается пустой список.</p>
+
+<p>Результат по ссылке <a href="http://github.com/chemist/russian-morphology">russian-morphology</a></p>
+
+<p>Установка как для любого cabal пакета.</p>
+
+<h2>Послесловие:</h2>
+
+<p>По хорошему нужно переписать используя <a href="http://en.wikipedia.org/wiki/Directed_acyclic_word_graph">DAWG</a>, в качестве хранилища для лемм и прочего + реализовать полный функционал.</p>
 ]]></content>
   </entry>
   

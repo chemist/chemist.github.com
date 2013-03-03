@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Haskell | Chemist's Blog]]></title>
+  <link href="http://chemist.github.com/blog/categories/haskell/atom.xml" rel="self"/>
+  <link href="http://chemist.github.com/"/>
+  <updated>2013-03-03T17:23:17+04:00</updated>
+  <id>http://chemist.github.com/</id>
+  <author>
+    <name><![CDATA[Smirnov Alexey]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Морфология]]></title>
+    <link href="http://chemist.github.com/blog/2013/03/03/morfologhiia/"/>
+    <updated>2013-03-03T16:27:00+04:00</updated>
+    <id>http://chemist.github.com/blog/2013/03/03/morfologhiia</id>
+    <content type="html"><![CDATA[<h2>Предыстория</h2>
+
+<p>Год назад, для одного из проектов мне понадобилась морфология, google и yandex вариантов для haskell не нашли.
+Немного изучив предметную область, написал свой упрощенный вариант морфологии.</p>
+
+<h2>Описание</h2>
+
+<p>Словарь взял из  <a href="http://pythonhosted.org/pymorphy/">pymorphy</a>, из функционала присутствует только нормализация, все остальное мне было не нужно.</p>
+
+<p>Пример использования:
+``` haskell
+module Main where</p>
+
+<p>import Text.Morphology.Russian</p>
+
+<p>-- | import modules for show cyrillic in console
+import Data.ByteString (putStrLn)
+import Data.Text.Encoding (encodeUtf8)</p>
+
+<p>main::IO ()
+main = do</p>
+
+<p>--| create binary file with morphology base
+  makeMorph</p>
+
+<p>--| load binary file, and return IO Morph
+  normal &lt;- normalForm</p>
+
+<p>  let check = normal (pack "есть")
+  mapM<em> putStrLn $ map encodeUtf8 check
+  let check = normal (pack "ржи")
+  mapM</em> putStrLn $ map encodeUtf8 check</p>
+
+<p>```</p>
+
+<p>В результате:
+```</p>
+
+<blockquote><p>:l Main
+main
+быть
+есть
+есть
+рожь
+ржа
+ржать
+```
+Если нормальной формы не найденно возвращается пустой список.</p></blockquote>
+
+<p>Результат по ссылке <a href="http://github.com/chemist/russian-morphology">russian-morphology</a></p>
+
+<p>Установка как для любого cabal пакета.</p>
+
+<h2>Послесловие:</h2>
+
+<p>По хорошему нужно переписать используя <a href="http://en.wikipedia.org/wiki/Directed_acyclic_word_graph">DAWG</a>, в качестве хранилища для лемм и прочего + реализовать полный функционал.</p>
+]]></content>
+  </entry>
+  
+</feed>
