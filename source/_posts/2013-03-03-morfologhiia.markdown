@@ -19,19 +19,22 @@ categories: Haskell
 module Main where
 
 import Text.Morphology.Russian
+import Data.Text (pack)
 
 -- | import modules for show cyrillic in console
-import Data.Text (pack)
-import Data.ByteString (putStrLn)
+import Data.ByteString.Char8 (putStrLn)
 import Data.Text.Encoding (encodeUtf8)
+import Prelude hiding (putStrLn)
 
 main::IO ()
 main = do
 
---| create binary file with morphology base
-  makeMorph
+-- | recreate binary file with morphology base, if you realy need this
+-- |  makeMorph
+-- | create morph.bin file in in data_dir 
+-- | about data_dir see here  [about data_dir](http://neilmitchell.blogspot.ru/2008/02/adding-data-files-using-cabal.html)
 
---| load binary file, and return IO Morph
+-- | load binary file from data_dir, and return IO Morph
   normal <- normalForm
 
   let check = normal (pack "есть")
