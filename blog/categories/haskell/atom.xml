@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Haskell | Chemist's Blog]]></title>
   <link href="http://chemist.github.com/blog/categories/haskell/atom.xml" rel="self"/>
   <link href="http://chemist.github.com/"/>
-  <updated>2013-03-03T20:36:52+04:00</updated>
+  <updated>2013-03-03T21:25:27+04:00</updated>
   <id>http://chemist.github.com/</id>
   <author>
     <name><![CDATA[Smirnov Alexey]]></name>
@@ -22,6 +22,9 @@
 
 <p>Год назад, для одного из проектов мне понадобилась морфология, google и yandex вариантов для haskell не нашли.
 Немного изучив предметную область, написал свой упрощенный вариант морфологии.</p>
+
+<!-- more -->
+
 
 <h2>Описание</h2>
 
