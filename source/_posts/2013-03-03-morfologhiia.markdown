@@ -21,6 +21,7 @@ module Main where
 import Text.Morphology.Russian
 
 -- | import modules for show cyrillic in console
+import Data.Text (pack)
 import Data.ByteString (putStrLn)
 import Data.Text.Encoding (encodeUtf8)
 
