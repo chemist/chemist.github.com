@@ -4,7 +4,7 @@
   <title><![CDATA[Chemist's Blog]]></title>
   <link href="http://chemist.github.com/atom.xml" rel="self"/>
   <link href="http://chemist.github.com/"/>
-  <updated>2013-08-01T00:53:45+04:00</updated>
+  <updated>2013-08-01T01:14:08+04:00</updated>
   <id>http://chemist.github.com/</id>
   <author>
     <name><![CDATA[Smirnov Alexey]]></name>
@@ -18,9 +18,7 @@
     <link href="http://chemist.github.com/blog/2013/07/31/update-morfologhiia/"/>
     <updated>2013-07-31T23:38:00+04:00</updated>
     <id>http://chemist.github.com/blog/2013/07/31/update-morfologhiia</id>
-    <content type="html"><![CDATA[<h2>Update: Морфология.</h2>
-
-<p>Добрались руки и набросал новую версию морфологии.
+    <content type="html"><![CDATA[<p>Добрались руки и набросал новую версию морфологии.
 Теперь в качестве структуры для хранения словаря используется направленный ациклический граф (DAWG).
 Исходные данные для словаря теперь берутся из <a href="http://opencorpora.org/dict.php">opencorpora</a>.
 Собственно от морфологии там только запакованный словарь, тривиальная вебморда для тестирования, парсер + код для упаковки в dawg ну и наверное все.
