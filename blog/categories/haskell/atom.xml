@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Haskell | Chemist's Blog]]></title>
   <link href="http://chemist.github.com/blog/categories/haskell/atom.xml" rel="self"/>
   <link href="http://chemist.github.com/"/>
-  <updated>2013-03-03T21:53:48+04:00</updated>
+  <updated>2013-08-01T00:48:26+04:00</updated>
   <id>http://chemist.github.com/</id>
   <author>
     <name><![CDATA[Smirnov Alexey]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Update: Морфология]]></title>
+    <link href="http://chemist.github.com/blog/2013/07/31/update-morfologhiia/"/>
+    <updated>2013-07-31T23:38:00+04:00</updated>
+    <id>http://chemist.github.com/blog/2013/07/31/update-morfologhiia</id>
+    <content type="html"><![CDATA[<h2>Update: Морфология.</h2>
+
+<p>Добрались руки и набросал новую версию морфологии.
+Теперь в качестве структуры для хранения словаря используется направленный ациклический граф (DAWG).
+Исходные данные для словаря теперь берутся из <a href="http://opencorpora.org/dict.php">opencorpora</a>.
+Собственно от морфологии там только запакованный словарь, тривиальная вебморда для тестирования, парсер + код для упаковки в dawg ну и наверное все.
+Поиск по словарю с выводом форм слов работает нормально, но нужно добавить предсказатель для тех слов что отсутствуют в словаре.
+API пока отсутствует как класс, немного позже добавлю все эти штуки.
+Вдобавок есть мысль прикрутить прослойку в виде сетевого сервиса с протоколом по типу memcache.</p>
+
+<p>Бинарь словаря пока не прилагаю, 15 мегабайт с репы дергать постоянно не камильфо.
+Если у кого есть желание поиграться отпишите в коментах, либо соберите сами</p>
+
+<p><code>
+wget http://opencorpora.org/files/export/dict/dict.opcorpora.txt.bz2
+unpack dict.opcorpora.txt.bz2
+ghc -hide-package vector-binary-instances -O2 BuildDict.hs -o builder
+./builder
+</code>
+Минут за 15 - 20 и 2 гигабайта памяти с копейками, сие диво дивное родит несколько бинарных файлов,
+оставить dawg.dict, в нем словарь, остальное можно удалять.
+Далее скомпилировать Main.hs и запускать с той-же папки.
+Доступно на локалхосте по 8000 порту.</p>
+
+<p>Как то так.
+И да если ктонить ткнет носом как оптимизировать Builder.hs чтоб он кушал меньше памяти буду сильно признателен.
+Хотя памяти у меня достаточно + есть еще толстая свободная подушка, но неприятно.</p>
+
+<p>Когда в очередной раз мне надоест пилить радио streaming сервер, доделаю морфологию до нормлаьного состояния.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Морфология]]></title>
