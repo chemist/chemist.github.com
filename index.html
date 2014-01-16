@@ -9,7 +9,7 @@
   <meta name="author" content="Smirnov Alexey">
 
   
-  <meta name="description" content="Окончательное решение непонятных вопросов: ">
+  <meta name="description" content="Что за хаскель и что такое монада? ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -108,7 +108,7 @@
   </header>
 
 
-  <div class="entry-content"><h4>Окончательное решение непонятных вопросов:</h4>
+  <div class="entry-content"><h2>Что за хаскель и что такое монада?</h2>
 
 </div>
   
@@ -151,39 +151,14 @@
   </header>
 
 
-  <div class="entry-content"><p>Добрались руки и набросал новую версию морфологии.
-Теперь в качестве структуры для хранения словаря используется направленный ациклический граф (DAWG).
-Исходные данные для словаря теперь берутся из <a href="http://opencorpora.org/dict.php">opencorpora</a>.
-Собственно от морфологии там только запакованный словарь, тривиальная вебморда для тестирования, парсер + код для упаковки в dawg ну и наверное все.
-Поиск по словарю с выводом форм слов работает нормально, но нужно добавить предсказатель для тех слов что отсутствуют в словаре.
-API пока отсутствует как класс, немного позже добавлю все эти штуки.
-Вдобавок есть мысль прикрутить прослойку в виде сетевого сервиса с протоколом по типу memcache.</p>
+  <div class="entry-content"><p>Добрались руки и набросал новую версию морфологии.</p>
 
-<p>Бинарь словаря пока не прилагаю, 15 мегабайт с репы дергать постоянно не камильфо.
-Если у кого есть желание поиграться отпишите в коментах, либо соберите сами</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://opencorpora.org/files/export/dict/dict.opcorpora.txt.bz2
-</span><span class='line'>unpack dict.opcorpora.txt.bz2 
-</span><span class='line'>ghc -hide-package vector-binary-instances -O2 BuildDict.hs -o builder
-</span><span class='line'>./builder</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Минут за 15 - 20 и 2 гигабайта памяти с копейками, сие диво дивное родит несколько бинарных файлов,
-оставить dawg.dict, в нем словарь, остальное можно удалять.
-Далее скомпилировать Main.hs и запускать с той-же папки.
-Доступно на локалхосте по 8000 порту.</p>
-
-<p>Как то так.
-И да если ктонить ткнет носом как оптимизировать Builder.hs чтоб он кушал меньше памяти буду сильно признателен.
-Хотя памяти у меня достаточно + есть еще толстая свободная подушка, но неприятно.</p>
-
-<p>Когда в очередной раз мне надоест пилить радио streaming сервер, доделаю морфологию до нормального состояния.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/31/update-morfologhiia/">Read on &rarr;</a>
+    </footer>
   
 
 

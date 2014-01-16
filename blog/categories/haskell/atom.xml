@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Haskell | Chemist's Blog]]></title>
   <link href="http://chemist.github.com/blog/categories/haskell/atom.xml" rel="self"/>
   <link href="http://chemist.github.com/"/>
-  <updated>2014-01-17T01:21:47+04:00</updated>
+  <updated>2014-01-17T01:29:36+04:00</updated>
   <id>http://chemist.github.com/</id>
   <author>
     <name><![CDATA[Smirnov Alexey]]></name>
@@ -18,8 +18,12 @@
     <link href="http://chemist.github.com/blog/2013/07/31/update-morfologhiia/"/>
     <updated>2013-07-31T23:38:00+04:00</updated>
     <id>http://chemist.github.com/blog/2013/07/31/update-morfologhiia</id>
-    <content type="html"><![CDATA[<p>Добрались руки и набросал новую версию морфологии.
-Теперь в качестве структуры для хранения словаря используется направленный ациклический граф (DAWG).
+    <content type="html"><![CDATA[<p>Добрались руки и набросал новую версию морфологии.</p>
+
+<!-- more -->
+
+
+<p>Теперь в качестве структуры для хранения словаря используется направленный ациклический граф (DAWG).
 Исходные данные для словаря теперь берутся из <a href="http://opencorpora.org/dict.php">opencorpora</a>.
 Собственно от морфологии там только запакованный словарь, тривиальная вебморда для тестирования, парсер + код для упаковки в dawg ну и наверное все.
 Поиск по словарю с выводом форм слов работает нормально, но нужно добавить предсказатель для тех слов что отсутствуют в словаре.
