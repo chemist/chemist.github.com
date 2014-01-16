@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Update: Морфология - Chemist's Blog</title>
+  <title>Юмор - Chemist's Blog</title>
   <meta name="author" content="Smirnov Alexey">
 
   
-  <meta name="description" content="Добрались руки и набросал новую версию морфологии.
-Теперь в качестве структуры для хранения словаря используется направленный ациклический граф (DAWG &hellip;">
+  <meta name="description" content="Окончательное решение непонятных вопросов: Хаскель Кота зовут Хаскель, порода мэйнкун, вес от 8 до 9,5 килограммов, возраст полтора года. Монада Кафе &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chemist.github.com/blog/2013/07/31/update-morfologhiia/">
+  <link rel="canonical" href="http://chemist.github.com/blog/2014/01/16/iumor/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Update: Морфология</h1>
+      <h1 class="entry-title">Юмор</h1>
     
     
       <p class="meta">
@@ -97,7 +96,7 @@
   
 
 
-<time datetime="2013-07-31T23:38:00+04:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+<time datetime="2014-01-16T22:29:00+04:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -106,37 +105,17 @@
   </header>
 
 
-<div class="entry-content"><p>Добрались руки и набросал новую версию морфологии.
-Теперь в качестве структуры для хранения словаря используется направленный ациклический граф (DAWG).
-Исходные данные для словаря теперь берутся из <a href="http://opencorpora.org/dict.php">opencorpora</a>.
-Собственно от морфологии там только запакованный словарь, тривиальная вебморда для тестирования, парсер + код для упаковки в dawg ну и наверное все.
-Поиск по словарю с выводом форм слов работает нормально, но нужно добавить предсказатель для тех слов что отсутствуют в словаре.
-API пока отсутствует как класс, немного позже добавлю все эти штуки.
-Вдобавок есть мысль прикрутить прослойку в виде сетевого сервиса с протоколом по типу memcache.</p>
+<div class="entry-content"><h1>Окончательное решение непонятных вопросов:</h1>
 
-<p>Бинарь словаря пока не прилагаю, 15 мегабайт с репы дергать постоянно не камильфо.
-Если у кого есть желание поиграться отпишите в коментах, либо соберите сами</p>
+<h2>Хаскель</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://opencorpora.org/files/export/dict/dict.opcorpora.txt.bz2
-</span><span class='line'>unpack dict.opcorpora.txt.bz2 
-</span><span class='line'>ghc -hide-package vector-binary-instances -O2 BuildDict.hs -o builder
-</span><span class='line'>./builder</span></code></pre></td></tr></table></div></figure>
+<p><img class="[photo]" src="../images/haskell.jpg" title="[640] [480] [haskell cat]" >
+Кота зовут Хаскель, порода мэйнкун, вес от 8 до 9,5 килограммов, возраст полтора года.</p>
 
+<h2>Монада</h2>
 
-<p>Минут за 15 - 20 и 2 гигабайта памяти с копейками, сие диво дивное родит несколько бинарных файлов,
-оставить dawg.dict, в нем словарь, остальное можно удалять.
-Далее скомпилировать Main.hs и запускать с той-же папки.
-Доступно на локалхосте по 8000 порту.</p>
-
-<p>Как то так.
-И да если ктонить ткнет носом как оптимизировать Builder.hs чтоб он кушал меньше памяти буду сильно признателен.
-Хотя памяти у меня достаточно + есть еще толстая свободная подушка, но неприятно.</p>
-
-<p>Когда в очередной раз мне надоест пилить радио streaming сервер, доделаю морфологию до нормального состояния.</p>
+<p><img class="[photo]" src="../images/monad.jpg" title="[640] [480] [cafe monada]" >
+Кафе в селе Поляна (Свалявский район, Закарпатье), откуда взялось название никто не знает.</p>
 </div>
 
 
@@ -159,21 +138,15 @@ API пока отсутствует как класс, немного позже
   
 
 
-<time datetime="2013-07-31T23:38:00+04:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+<time datetime="2014-01-16T22:29:00+04:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/haskell/'>Haskell</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://chemist.github.com/blog/2013/07/31/update-morfologhiia/" data-via="" data-counturl="http://chemist.github.com/blog/2013/07/31/update-morfologhiia/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://chemist.github.com/blog/2014/01/16/iumor/" data-via="" data-counturl="http://chemist.github.com/blog/2014/01/16/iumor/" >Tweet</a>
   
   
   
@@ -182,10 +155,8 @@ API пока отсутствует как класс, немного позже
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/03/03/morfologhiia/" title="Previous Post: Морфология">&laquo; Морфология</a>
+        <a class="basic-alignment left" href="/blog/2013/07/31/update-morfologhiia/" title="Previous Post: Update: Морфология">&laquo; Update: Морфология</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/01/16/iumor/" title="Next Post: Юмор">Юмор &raquo;</a>
       
     </p>
   </footer>
@@ -273,8 +244,8 @@ API пока отсутствует как класс, немного позже
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://chemist.github.com/blog/2013/07/31/update-morfologhiia/';
-        var disqus_url = 'http://chemist.github.com/blog/2013/07/31/update-morfologhiia/';
+        var disqus_identifier = 'http://chemist.github.com/blog/2014/01/16/iumor/';
+        var disqus_url = 'http://chemist.github.com/blog/2014/01/16/iumor/';
         var disqus_script = 'embed.js';
       
     (function () {

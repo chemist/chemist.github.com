@@ -4,7 +4,7 @@
   <title><![CDATA[Chemist's Blog]]></title>
   <link href="http://chemist.github.com/atom.xml" rel="self"/>
   <link href="http://chemist.github.com/"/>
-  <updated>2013-08-01T01:14:08+04:00</updated>
+  <updated>2014-01-16T23:01:02+04:00</updated>
   <id>http://chemist.github.com/</id>
   <author>
     <name><![CDATA[Smirnov Alexey]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Юмор]]></title>
+    <link href="http://chemist.github.com/blog/2014/01/16/iumor/"/>
+    <updated>2014-01-16T22:29:00+04:00</updated>
+    <id>http://chemist.github.com/blog/2014/01/16/iumor</id>
+    <content type="html"><![CDATA[<h1>Окончательное решение непонятных вопросов:</h1>
+
+<h2>Хаскель</h2>
+
+<p><img class="[photo]" src="../images/haskell.jpg" title="[640] [480] [haskell cat]" >
+Кота зовут Хаскель, порода мэйнкун, вес от 8 до 9,5 килограммов, возраст полтора года.</p>
+
+<h2>Монада</h2>
+
+<p><img class="[photo]" src="../images/monad.jpg" title="[640] [480] [cafe monada]" >
+Кафе в селе Поляна (Свалявский район, Закарпатье), откуда взялось название никто не знает.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Update: Морфология]]></title>
